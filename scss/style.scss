@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body, button[type=submit] {
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 0.02em;
+}
+
+.flag-image {
+    height: 200px;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+}
