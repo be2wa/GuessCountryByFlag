@@ -52,8 +52,8 @@ class Flag extends React.Component {
             else 
                 throw new Error('Network error');
         }).then(resp => {
-            let namesArray = [];
-            let flagsArray = [];
+            const namesArray = [];
+            const flagsArray = [];
             for (let i=0; i<resp.length; i++){
                 namesArray.push(resp[i].name);
                 flagsArray.push(resp[i].flag);
@@ -70,8 +70,8 @@ class Flag extends React.Component {
     }
     
     validate = () => {
-        let input = $('input');
-        let inputVal = input.val();
+        let input = document.querySelector('input');
+        let inputVal = input.value;
         if((this.state.name).toUpperCase() == inputVal.toUpperCase()){
             console.log('ok');
             this.setState({
@@ -79,9 +79,9 @@ class Flag extends React.Component {
             })
             this.loadQuestion();
         } else {
-            console.log('nie ok')
+            console.log(this.state.name);
         }
-        input.val('');
+        input.value = '';
     }
     
     render(){
@@ -116,9 +116,9 @@ class Timer extends React.Component {
     render(){
         if(this.state.time < 1){
             clearInterval(this.intervalId)
-            return <h2>0s</h2>
+            return <h2>Time: 0s</h2>
         }
-        else return <h2>{this.state.time}s</h2>
+        else return <h2>Time: {this.state.time}s</h2>
     }
 }
 ////////////////////////////////////////////////////////// 
@@ -132,6 +132,7 @@ class Footer extends React.Component {
     }
 
     componentDidMount(){
+        this.nameInput.focus();
         this.timeoutId = setTimeout(() => {
             this.setState({
                 isOver: true
@@ -158,7 +159,7 @@ class Footer extends React.Component {
         } else {
             return  <div>
                         <h2>Answer: 
-                        <input type="text" onKeyPress={this.handleKeyPress}></input>
+                        <input ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
                         <button onClick={this.props.validate} type="submit">Submit</button>
                         Points: {this.props.points}
                         </h2>
@@ -181,5 +182,4 @@ ReactDOM.render(
     <App />,
     document.getElementById('app')
 );
-
 });
