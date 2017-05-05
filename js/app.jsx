@@ -34,6 +34,7 @@ class Flag extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            time: 9,
             name: '',
             flag: '',
             points: 0
@@ -87,6 +88,7 @@ class Flag extends React.Component {
         return <div>
                 <img className="flag-image" src={this.state.flag} />
                 <Footer points={this.state.points} validate={this.validate} />
+                <Timer timeLeft={this.state.time}/>
             </div>
     }
 }
@@ -124,7 +126,7 @@ class Footer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            time: 9,
+//            time: 9,
             isOver: false
         }
     }
@@ -140,21 +142,27 @@ class Footer extends React.Component {
     componentWillUnmount(){
         clearTimeout(this.timeoutId);
     }
+    
+    handleKeyPress = (event) => {
+        if(event.key == 'Enter'){
+            this.props.validate();
+        }
+    }
 
     render(){
         if(this.state.isOver){
             return <div>
                         <h2>Points: {this.props.points}</h2>
-                        <Timer />
+                        {/*<Timer />*/}
                     </div>;
         } else {
             return  <div>
                         <h2>Answer: 
-                        <input type="text"></input>
+                        <input type="text" onKeyPress={this.handleKeyPress}></input>
                         <button onClick={this.props.validate} type="submit">Submit</button>
                         Points: {this.props.points}
                         </h2>
-                        <Timer timeLeft={this.state.time} />
+                {/*<Timer timeLeft={this.state.time} />*/}
                     </div>
         }
     }
