@@ -4,14 +4,40 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: center;
+}
+
 body, button[type=submit] {
     font-family: 'Roboto Slab', serif;
     letter-spacing: 0.02em;
 }
 
+button[type=submit] {
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+input[type=text] {
+    padding: 4px 4px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    margin-top: -20px;
+}
+
 .flag-image {
     height: 200px;
-    margin: 0 auto;
+    margin: 20px 0;
     -webkit-box-shadow: 3px 3px 14px 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 3px 3px 14px 0 rgba(0,0,0,0.5);
     box-shadow: 3px 3px 14px 0 rgba(0,0,0,0.5);

@@ -23,9 +23,9 @@ class Header extends React.Component {
     }
     render(){
         if(this.state.isOver){
-            return <h1>GAME OVER</h1>
+            return <h1 className="header">GAME OVER</h1>
         } else {
-            return <h1>Which country's flag is this?</h1>;
+            return <h1 className="header">Which country's flag is this?</h1>;
         }
     }
 }
@@ -72,6 +72,7 @@ class Flag extends React.Component {
     validate = () => {
         let input = document.querySelector('input');
         let inputVal = input.value;
+        let correctAnswer = '';
         if((this.state.name).toUpperCase() == inputVal.toUpperCase()){
             console.log('ok');
             this.setState({
@@ -158,9 +159,9 @@ class Footer extends React.Component {
                     </div>;
         } else {
             return  <div>
-                        <h2>Answer: 
-                        <input ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
-                        <button onClick={this.props.validate} type="submit">Submit</button>
+                <h2>Answer:<span> </span>
+                        <input ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input><span> </span>
+                        <button onClick={this.props.validate} type="submit">Submit</button><br />
                         Points: {this.props.points}
                         </h2>
                 {/*<Timer timeLeft={this.state.time} />*/}
@@ -171,7 +172,7 @@ class Footer extends React.Component {
 /////////////////////////////////////////////////////////////
 class App extends React.Component {
     render() {
-        return <div>
+        return <div className="main-container">
                 <Header />
                 <Flag />
             </div>
