@@ -9588,7 +9588,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                         "h2",
                         null,
-                        "Time: 0s"
+                        "Time's out!"
                     );
                 } else return _react2.default.createElement(
                     "h2",
@@ -12126,7 +12126,7 @@ exports = module.exports = __webpack_require__(84)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background-image: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./img/hero.jpg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + "); }\n\nbody, button[type=submit] {\n  font-family: 'Roboto Slab', serif;\n  letter-spacing: 0.02em; }\n\nbutton[type=submit] {\n  padding-top: 2px;\n  padding-bottom: 5px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  margin-bottom: 10px;\n  margin-top: -10px; }\n\n.main-container {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.small-container {\n  width: 50vw;\n  min-width: 560px;\n  height: 62vh;\n  min-height: 460px;\n  margin: auto;\n  padding-top: 40px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.75);\n  -webkit-box-shadow: inset 3px 3px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 3px 3px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 3px 3px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid grey;\n  border-radius: 3px; }\n\n.flag-image {\n  height: 200px;\n  margin: 20px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  padding: 3px 5px 5px 5px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  margin-bottom: 10px;\n  margin-top: -10px; }\n\n.main-container {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.small-container {\n  width: 50vw;\n  min-width: 560px;\n  height: 62vh;\n  min-height: 460px;\n  margin: auto;\n  padding-top: 40px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\n.flag-image {\n  height: 200px;\n  margin: 20px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
 
 // exports
 

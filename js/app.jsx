@@ -117,7 +117,7 @@ class Timer extends React.Component {
     render(){
         if(this.state.time < 1){
             clearInterval(this.intervalId)
-            return <h2>Time: 0s</h2>
+            return <h2>Time's out!</h2>
         }
         else return <h2>Time: {this.state.time}s</h2>
     }
