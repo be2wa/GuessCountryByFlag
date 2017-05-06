@@ -9442,7 +9442,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _this2.setState({
                         isOver: true
                     });
-                }, 9000);
+                }, 29000);
             }
         }, {
             key: "componentWillUnmount",
@@ -9519,7 +9519,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             _this3.state = {
-                time: 9,
+                time: 29,
                 name: '',
                 flag: '',
                 points: 0
@@ -9636,7 +9636,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _this7.setState({
                         isOver: true
                     });
-                }, 9000);
+                }, 29000);
             }
         }, {
             key: "componentWillUnmount",
@@ -9663,29 +9663,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                         "div",
                         null,
+                        _react2.default.createElement("input", { className: "answer-input", ref: function ref(input) {
+                                _this8.nameInput = input;
+                            }, type: "text", onKeyPress: this.handleKeyPress }),
+                        _react2.default.createElement(
+                            "button",
+                            { onClick: this.props.validate, type: "submit" },
+                            "Submit"
+                        ),
                         _react2.default.createElement(
                             "h2",
                             null,
-                            "Answer:",
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement("input", { ref: function ref(input) {
-                                    _this8.nameInput = input;
-                                }, type: "text", onKeyPress: this.handleKeyPress }),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement(
-                                "button",
-                                { onClick: this.props.validate, type: "submit" },
-                                "Submit"
-                            ),
-                            _react2.default.createElement("br", null),
                             "Points: ",
                             this.props.points
                         )
@@ -9713,7 +9701,7 @@ document.addEventListener('DOMContentLoaded', function () {
             value: function render() {
                 return _react2.default.createElement(
                     "div",
-                    { className: "main-container" },
+                    { className: "row" },
                     _react2.default.createElement(
                         "div",
                         { className: "small-container" },
@@ -12126,7 +12114,7 @@ exports = module.exports = __webpack_require__(84)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  padding: 3px 5px 5px 5px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  margin-bottom: 10px;\n  margin-top: -10px; }\n\n.main-container {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.small-container {\n  width: 50vw;\n  min-width: 560px;\n  height: 62vh;\n  min-height: 460px;\n  margin: auto;\n  padding-top: 40px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\n.flag-image {\n  height: 200px;\n  margin: 20px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  color: #fafafa;\n  width: 75%;\n  height: 35px;\n  margin-top: 10px;\n  padding: 3px 5px 5px 5px;\n  background-color: #104ea8;\n  border-radius: 5px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  display: block;\n  margin: auto;\n  width: 70%; }\n\n.small-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  width: 100%;\n  height: 100vh;\n  padding-top: 10px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\nimg.flag-image {\n  max-width: 85%;\n  max-height: 50vw;\n  margin: 10px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
 
 // exports
 

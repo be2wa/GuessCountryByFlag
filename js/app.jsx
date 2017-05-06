@@ -16,7 +16,7 @@ class Header extends React.Component {
             this.setState({
                 isOver: true
             });
-        },9000);
+        },29000);
     }
     componentWillUnmount(){
         clearTimeout(this.timeoutId);
@@ -34,7 +34,7 @@ class Flag extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            time: 9,
+            time: 29,
             name: '',
             flag: '',
             points: 0
@@ -138,7 +138,7 @@ class Footer extends React.Component {
             this.setState({
                 isOver: true
             });
-        },9000);
+        },29000);
     }
 
     componentWillUnmount(){
@@ -159,11 +159,10 @@ class Footer extends React.Component {
                     </div>;
         } else {
             return  <div>
-                <h2>Answer:<span> </span>
-                        <input ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input><span> </span>
-                        <button onClick={this.props.validate} type="submit">Submit</button><br />
-                        Points: {this.props.points}
-                        </h2>
+                {/*<h2>Answer:</h2>*/}
+                <input className="answer-input" ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
+                <button onClick={this.props.validate} type="submit">Submit</button>
+                <h2>Points: {this.props.points}</h2>
                 {/*<Timer timeLeft={this.state.time} />*/}
                     </div>
         }
@@ -172,7 +171,7 @@ class Footer extends React.Component {
 /////////////////////////////////////////////////////////////
 class App extends React.Component {
     render() {
-        return <div className="main-container">
+        return <div className="row">
                <div className="small-container">
                     <Header />
                     <Flag />
