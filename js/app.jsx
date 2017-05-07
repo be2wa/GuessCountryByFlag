@@ -46,6 +46,10 @@ class Flag extends React.Component {
         this.loadQuestion();
     }
     
+    componentWillUnmount(){
+        clearTimeout(this.timeoutId);
+    }
+    
     loadQuestion = () => {
         fetch('https://restcountries.eu/rest/v2/region/europe?fields=flag;name').then(resp => {
             if(resp.ok)
@@ -78,13 +82,14 @@ class Flag extends React.Component {
             console.log('ok');
             this.setState({
                 points: this.state.points +1,
-                answer: 'CORRECT!'
+                answer: 'You were CORRECT!'
             })
             this.loadQuestion();
         } else {
             console.log(this.state.name);
             this.setState({
-                answer: 'WRONG!'
+                answer: ['Wrong! It was ', 
+                        this.state.name]
             })
             this.loadQuestion();
         }
@@ -93,12 +98,12 @@ class Flag extends React.Component {
     
     render(){
             return <div>
-                    <img className="flag-image" src={this.state.flag} />
-                    <h2>{this.state.answer}</h2>
-                    <Footer points={this.state.points} validate={this.validate} />
-                    <Timer timeLeft={this.state.time}/>
-                </div>
-            
+                        <img className="flag-image" src={this.state.flag} />
+                        <h2>{this.state.answer}</h2>
+                        <Footer points={this.state.points} validate={this.validate} />
+                        <Timer timeLeft={this.state.time}/>
+                    </div>
+       
     }
 }
 ///////////////////////////////////////////////////////////
@@ -163,15 +168,12 @@ class Footer extends React.Component {
         if(this.state.isOver){
             return <div>
                         <h2>Points: {this.props.points}</h2>
-                        {/*<Timer />*/}
                     </div>;
         } else {
             return  <div>
-                    {/*<h2>Answer:</h2>*/}
                     <input className="answer-input" ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
                     <button onClick={this.props.validate} type="submit">Enter</button>
                     <h3>Points: {this.props.points}</h3>
-                    {/*<Timer timeLeft={this.state.time} />*/}
                     </div>
         }
     }

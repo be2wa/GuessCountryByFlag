@@ -9509,11 +9509,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (_this3.state.name.toUpperCase() == inputVal.toUpperCase()) {
                     console.log('ok');
                     _this3.setState({
-                        points: _this3.state.points + 1
+                        points: _this3.state.points + 1,
+                        answer: 'You were CORRECT!'
                     });
                     _this3.loadQuestion();
                 } else {
                     console.log(_this3.state.name);
+                    _this3.setState({
+                        answer: ['Wrong! It was ', _this3.state.name]
+                    });
+                    _this3.loadQuestion();
                 }
                 input.value = '';
             };
@@ -9522,7 +9527,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 time: 29,
                 name: '',
                 flag: '',
-                points: 0
+                points: 0,
+                answer: null
             };
             return _this3;
         }
@@ -9533,12 +9539,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.loadQuestion();
             }
         }, {
+            key: "componentWillUnmount",
+            value: function componentWillUnmount() {
+                clearTimeout(this.timeoutId);
+            }
+        }, {
             key: "render",
             value: function render() {
                 return _react2.default.createElement(
                     "div",
                     null,
                     _react2.default.createElement("img", { className: "flag-image", src: this.state.flag }),
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        this.state.answer
+                    ),
                     _react2.default.createElement(Footer, { points: this.state.points, validate: this.validate }),
                     _react2.default.createElement(Timer, { timeLeft: this.state.time })
                 );
@@ -9586,12 +9602,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (this.state.time < 1) {
                     clearInterval(this.intervalId);
                     return _react2.default.createElement(
-                        "h2",
+                        "h3",
                         null,
                         "Time's out!"
                     );
                 } else return _react2.default.createElement(
-                    "h2",
+                    "h3",
                     null,
                     "Time: ",
                     this.state.time,
@@ -9669,10 +9685,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         _react2.default.createElement(
                             "button",
                             { onClick: this.props.validate, type: "submit" },
-                            "Submit"
+                            "Enter"
                         ),
                         _react2.default.createElement(
-                            "h2",
+                            "h3",
                             null,
                             "Points: ",
                             this.props.points
@@ -12114,7 +12130,7 @@ exports = module.exports = __webpack_require__(84)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  color: #fafafa;\n  width: 75%;\n  height: 35px;\n  margin-top: 10px;\n  padding: 3px 5px 5px 5px;\n  background-color: #104ea8;\n  border-radius: 5px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  display: block;\n  margin: auto;\n  width: 70%; }\n\n.small-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  width: 100%;\n  height: 100vh;\n  padding-top: 10px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\nimg.flag-image {\n  max-width: 85%;\n  max-height: 50vw;\n  margin: 10px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  color: #fafafa;\n  width: 75%;\n  max-width: 285px;\n  height: 50px;\n  margin-top: 10px;\n  margin-bottom: 5px;\n  padding: 3px 5px 5px 5px;\n  background-color: #104ea8;\n  border-radius: 5px;\n  font-family: 'Roboto Slab', serif;\n  font-size: 18px;\n  border-radius: 3px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  display: block;\n  margin: auto;\n  width: 75%;\n  max-width: 300px;\n  height: 30px;\n  font-size: 20px;\n  font-family: 'Roboto Slab', serif;\n  font-weight: 600; }\n\n.small-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  width: 100vw;\n  height: 100vh;\n  padding-top: 10px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\nimg.flag-image {\n  max-width: 80%;\n  max-height: 50vh;\n  margin: 10px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
 
 // exports
 
