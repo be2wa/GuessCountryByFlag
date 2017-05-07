@@ -8,7 +8,7 @@ class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            isOver: false
+            isOver: false,
         }
     }
     componentDidMount(){
@@ -37,7 +37,8 @@ class Flag extends React.Component {
             time: 29,
             name: '',
             flag: '',
-            points: 0
+            points: 0,
+            answer: null
         }
     }
     
@@ -76,21 +77,28 @@ class Flag extends React.Component {
         if((this.state.name).toUpperCase() == inputVal.toUpperCase()){
             console.log('ok');
             this.setState({
-                points: this.state.points +1
+                points: this.state.points +1,
+                answer: 'CORRECT!'
             })
             this.loadQuestion();
         } else {
             console.log(this.state.name);
+            this.setState({
+                answer: 'WRONG!'
+            })
+            this.loadQuestion();
         }
         input.value = '';
     }
     
     render(){
-        return <div>
-                <img className="flag-image" src={this.state.flag} />
-                <Footer points={this.state.points} validate={this.validate} />
-                <Timer timeLeft={this.state.time}/>
-            </div>
+            return <div>
+                    <img className="flag-image" src={this.state.flag} />
+                    <h2>{this.state.answer}</h2>
+                    <Footer points={this.state.points} validate={this.validate} />
+                    <Timer timeLeft={this.state.time}/>
+                </div>
+            
     }
 }
 ///////////////////////////////////////////////////////////
@@ -103,7 +111,7 @@ class Timer extends React.Component {
     }
 
     componentDidMount(){
-       this.intervalId = setInterval(()=>{
+        this.intervalId = setInterval(()=>{
             this.setState({
                 time: this.state.time - 1,
             })
@@ -117,9 +125,9 @@ class Timer extends React.Component {
     render(){
         if(this.state.time < 1){
             clearInterval(this.intervalId)
-            return <h2>Time's out!</h2>
+            return <h3>Time's out!</h3>
         }
-        else return <h2>Time: {this.state.time}s</h2>
+        else return <h3>Time: {this.state.time}s</h3>
     }
 }
 ////////////////////////////////////////////////////////// 
@@ -159,11 +167,11 @@ class Footer extends React.Component {
                     </div>;
         } else {
             return  <div>
-                {/*<h2>Answer:</h2>*/}
-                <input className="answer-input" ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
-                <button onClick={this.props.validate} type="submit">Submit</button>
-                <h2>Points: {this.props.points}</h2>
-                {/*<Timer timeLeft={this.state.time} />*/}
+                    {/*<h2>Answer:</h2>*/}
+                    <input className="answer-input" ref={(input) => {this.nameInput = input; }} type="text" onKeyPress={this.handleKeyPress}></input>
+                    <button onClick={this.props.validate} type="submit">Enter</button>
+                    <h3>Points: {this.props.points}</h3>
+                    {/*<Timer timeLeft={this.state.time} />*/}
                     </div>
         }
     }
