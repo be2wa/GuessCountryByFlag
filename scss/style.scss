@@ -26,30 +26,32 @@ button[type=submit] {
     margin-bottom: 5px;
     padding: 3px 5px 5px 5px;
     background-color: rgb(16,78,168);
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: 'Roboto Slab', serif;
     font-size: 18px;
-    border-radius: 3px;
+}
+
+button[type=submit]:active {
+    padding-top: 6px;
+    -webkit-box-shadow: inset 0px 5px 5px -4px rgba(0,0,0,0.7);
+    -moz-box-shadow: inset 0px 5px 5px -4px rgba(0,0,0,0.7);
+    box-shadow: inset 0px 5px 5px -4px rgba(0,0,0,0.7);
+}
+
+button[type=submit]:focus {
+    outline: 0;
 }
 
 input[type=text] {
     padding: 4px 4px;
     display: block;
     margin: auto;
-    width: 75%;
+    max-width: 75%;
     max-width: 300px;
     height: 30px;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
     font-weight: 600;
-}
-
-.row {
-//    height: 100vh;
-//    display: flex;
-//    align-items: center;
-//    flex-direction: column;
-//    justify-content: center;
 }
 
 .small-container {

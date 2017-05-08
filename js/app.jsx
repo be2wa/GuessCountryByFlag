@@ -130,9 +130,9 @@ class Timer extends React.Component {
     render(){
         if(this.state.time < 1){
             clearInterval(this.intervalId)
-            return <h3>Time's out!</h3>
+            return <h3 className="timer">Time's out!</h3>
         }
-        else return <h3>Time: {this.state.time}s</h3>
+        else return <h3 className="timer">Time: {this.state.time}s</h3>
     }
 }
 ////////////////////////////////////////////////////////// 
@@ -181,12 +181,10 @@ class Footer extends React.Component {
 /////////////////////////////////////////////////////////////
 class App extends React.Component {
     render() {
-        return <div className="row">
-               <div className="small-container">
+        return <div className="small-container">
                     <Header />
                     <Flag />
                 </div>
-            </div>
     }
 }
 ////////////////////////////////////////////////////////////
