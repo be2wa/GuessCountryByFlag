@@ -9603,12 +9603,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     clearInterval(this.intervalId);
                     return _react2.default.createElement(
                         "h3",
-                        null,
+                        { className: "timer" },
                         "Time's out!"
                     );
                 } else return _react2.default.createElement(
                     "h3",
-                    null,
+                    { className: "timer" },
                     "Time: ",
                     this.state.time,
                     "s"
@@ -9636,7 +9636,6 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             _this6.state = {
-                //            time: 9,
                 isOver: false
             };
             return _this6;
@@ -9717,13 +9716,9 @@ document.addEventListener('DOMContentLoaded', function () {
             value: function render() {
                 return _react2.default.createElement(
                     "div",
-                    { className: "row" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "small-container" },
-                        _react2.default.createElement(Header, null),
-                        _react2.default.createElement(Flag, null)
-                    )
+                    { className: "small-container" },
+                    _react2.default.createElement(Header, null),
+                    _react2.default.createElement(Flag, null)
                 );
             }
         }]);
@@ -12130,7 +12125,7 @@ exports = module.exports = __webpack_require__(84)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  color: #fafafa;\n  width: 75%;\n  max-width: 285px;\n  height: 50px;\n  margin-top: 10px;\n  margin-bottom: 5px;\n  padding: 3px 5px 5px 5px;\n  background-color: #104ea8;\n  border-radius: 5px;\n  font-family: 'Roboto Slab', serif;\n  font-size: 18px;\n  border-radius: 3px; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  display: block;\n  margin: auto;\n  width: 75%;\n  max-width: 300px;\n  height: 30px;\n  font-size: 20px;\n  font-family: 'Roboto Slab', serif;\n  font-weight: 600; }\n\n.small-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  width: 100vw;\n  height: 100vh;\n  padding-top: 10px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\nimg.flag-image {\n  max-width: 80%;\n  max-height: 50vh;\n  margin: 10px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  box-sizing: border-box; }\n\nbody {\n  text-align: center;\n  background: url(\"https://gweb-earth.storage.googleapis.com/assets/hero@2x.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  background-size: cover;\n  color: #fafafa;\n  letter-spacing: 0.05em;\n  font-family: 'Roboto Slab', serif; }\n\nbutton[type=submit] {\n  color: #fafafa;\n  width: 75%;\n  max-width: 285px;\n  height: 50px;\n  margin-top: 10px;\n  margin-bottom: 5px;\n  padding: 3px 5px 5px 5px;\n  background-color: #104ea8;\n  border-radius: 8px;\n  font-family: 'Roboto Slab', serif;\n  font-size: 18px; }\n\nbutton[type=submit]:active {\n  padding-top: 6px;\n  -webkit-box-shadow: inset 0px 5px 5px -4px rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 0px 5px 5px -4px rgba(0, 0, 0, 0.7);\n  box-shadow: inset 0px 5px 5px -4px rgba(0, 0, 0, 0.7); }\n\nbutton[type=submit]:focus {\n  outline: 0; }\n\ninput[type=text] {\n  padding: 4px 4px;\n  display: block;\n  margin: auto;\n  max-width: 75%;\n  max-width: 300px;\n  height: 30px;\n  font-size: 20px;\n  font-family: 'Roboto Slab', serif;\n  font-weight: 600; }\n\n.small-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  width: 100vw;\n  height: 100vh;\n  padding-top: 10px;\n  background-color: #c8c8c8;\n  background-color: rgba(0, 0, 0, 0.55);\n  -webkit-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  -moz-box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  box-shadow: inset 1px 1px 14px 0 rgba(0, 0, 0, 0.7);\n  border: 1px solid black;\n  border-radius: 3px; }\n\nimg.flag-image {\n  max-width: 80%;\n  max-height: 50vh;\n  margin: 10px 0;\n  -webkit-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5);\n  box-shadow: 3px 3px 14px 0 rgba(0, 0, 0, 0.5); }\n", ""]);
 
 // exports
 
